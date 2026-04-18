@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>終極華麗黑名單機器人 - 企鵝防禦系統 | 管理面板 (Cloudflare 完整修復版)</title>
-    <!-- Font Awesome 6 (免費圖標庫) 使用可靠CDN -->
+    <title>終極華麗黑名單機器人 - 企鵝防禦系統 | 管理面板</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Font: 現代感字體，確保備用字體 -->
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -16,24 +16,23 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #0a0f1e 0%, #0c1222 100%);
             color: #eef2ff;
             padding: 2rem 1.5rem;
             min-height: 100vh;
         }
 
-        /* 玻璃面板容器 */
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* 標題區塊 */
         .header {
             text-align: center;
             margin-bottom: 2.5rem;
         }
+        
         .header h1 {
             font-size: 2.5rem;
             font-weight: 800;
@@ -48,13 +47,13 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+        
         .header h1 i {
             background: none;
-            -webkit-background-clip: unset;
-            background-clip: unset;
             color: #c084fc;
             font-size: 2.2rem;
         }
+        
         .badge {
             background: rgba(255,255,255,0.08);
             backdrop-filter: blur(4px);
@@ -67,7 +66,6 @@
             border: 1px solid rgba(139, 92, 246, 0.4);
         }
 
-        /* 卡片網格 */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -75,7 +73,6 @@
             margin-bottom: 2.5rem;
         }
 
-        /* 通用卡片樣式 */
         .card {
             background: rgba(18, 25, 45, 0.75);
             backdrop-filter: blur(12px);
@@ -85,11 +82,12 @@
             transition: all 0.25s ease;
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
         }
+        
         .card:hover {
             border-color: rgba(139, 92, 246, 0.6);
             transform: translateY(-3px);
-            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.5);
         }
+        
         .card-header {
             padding: 1.2rem 1.5rem;
             background: rgba(0, 0, 0, 0.3);
@@ -100,13 +98,16 @@
             font-weight: 700;
             font-size: 1.3rem;
         }
+        
         .card-header i {
             font-size: 1.6rem;
             color: #a78bfa;
         }
+        
         .card-body {
             padding: 1.5rem;
         }
+        
         .stat-row {
             display: flex;
             justify-content: space-between;
@@ -116,32 +117,25 @@
             padding-bottom: 8px;
             flex-wrap: wrap;
         }
+        
         .stat-label {
             font-weight: 500;
             color: #9ca3cf;
         }
+        
         .stat-value {
             font-weight: 700;
             color: #f0f3ff;
             font-family: monospace;
-            word-break: break-word;
-            text-align: right;
         }
-        .status-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        .status-on { background: #10b98120; color: #34d399; border: 1px solid #10b98160; }
-        .status-off { background: #ef444420; color: #f87171; border: 1px solid #ef444460; }
+        
         .btn-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 20px;
         }
+        
         .btn {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(139,92,246,0.5);
@@ -156,50 +150,58 @@
             align-items: center;
             gap: 6px;
         }
+        
         .btn-primary {
             background: #8b5cf6;
             border-color: #a78bfa;
             color: white;
             box-shadow: 0 2px 8px rgba(139,92,246,0.3);
         }
+        
         .btn-primary:hover {
             background: #7c3aed;
             transform: scale(1.02);
         }
+        
         .btn-outline {
             border-color: #4f46e5;
         }
+        
         .btn-outline:hover {
             background: #4f46e520;
         }
+        
         .log-area {
             background: #030617;
             border-radius: 1.2rem;
             padding: 1rem;
-            font-family: 'Monaco', 'Menlo', 'Cascadia Code', monospace;
+            font-family: 'Monaco', 'Menlo', monospace;
             font-size: 0.8rem;
             max-height: 280px;
             overflow-y: auto;
             border: 1px solid #2d3a5e;
         }
+        
         .log-line {
             padding: 6px 8px;
             border-bottom: 1px solid #1f2937;
             color: #b9c7e0;
-            font-family: monospace;
             white-space: pre-wrap;
             word-break: break-word;
         }
+        
         .footer {
             text-align: center;
             margin-top: 3rem;
             font-size: 0.8rem;
             opacity: 0.7;
         }
+        
         hr {
             border-color: #2d3748;
             margin: 1rem 0;
         }
+        
         @media (max-width: 760px) {
             body { padding: 1rem; }
             .card-header { font-size: 1.1rem; }
@@ -212,12 +214,10 @@
 <div class="container">
     <div class="header">
         <h1><i class="fab fa-discord"></i> 企鵝防禦系統 · 終極華麗黑名單</h1>
-        <div class="badge"><i class="fas fa-shield-alt"></i> v31.0 最終修復版 | 智能429防禦 | 完整邀請追蹤 | Cloudflare 零建構失敗</div>
+        <div class="badge"><i class="fas fa-shield-alt"></i> v31.0 最終修復版 | 智能429防禦 | 完整邀請追蹤 | ✅ Cloudflare Pages 就緒</div>
     </div>
 
-    <!-- 儀表板卡片區塊：模擬機器人核心數據 -->
     <div class="dashboard-grid">
-        <!-- 狀態卡: 即時資訊 -->
         <div class="card">
             <div class="card-header"><i class="fas fa-robot"></i> 機器人狀態</div>
             <div class="card-body">
@@ -232,326 +232,187 @@
             </div>
         </div>
 
-        <!-- 黑名單統計卡 -->
         <div class="card">
             <div class="card-header"><i class="fas fa-ban"></i> 黑名單戰報</div>
             <div class="card-body">
                 <div class="stat-row"><span class="stat-label"><i class="fas fa-globe"></i> 全域黑名單</span><span class="stat-value" id="globalBanCount">0</span></div>
                 <div class="stat-row"><span class="stat-label"><i class="fas fa-crown"></i> GodBan 極刑</span><span class="stat-value" id="godbanCount">0</span></div>
-                <div class="stat-row"><span class="stat-label"><i class="fas fa-building"></i> 本服黑名單(示範)</span><span class="stat-value" id="localBanCount">0</span></div>
+                <div class="stat-row"><span class="stat-label"><i class="fas fa-building"></i> 本服黑名單</span><span class="stat-value" id="localBanCount">0</span></div>
                 <div class="stat-row"><span class="stat-label"><i class="fas fa-chart-line"></i> 防濫權攔截</span><span class="stat-value" id="abuseBlocked">0 次/本月</span></div>
             </div>
         </div>
 
-        <!-- 防禦模塊快速設定卡 -->
         <div class="card">
             <div class="card-header"><i class="fas fa-shield-virus"></i> 核心防禦開關</div>
             <div class="card-body">
                 <div class="stat-row"><span class="stat-label">🛡️ 防Nuke系統</span><span class="stat-value" id="antinukeStatus">✅ 已啟用</span></div>
-                <div class="stat-row"><span class="stat-label">🚫 Antiraid新帳號</span><span class="stat-value" id="antiraidStatus">✅ 啟用 (3天/30分)</span></div>
+                <div class="stat-row"><span class="stat-label">🚫 Antiraid新帳號</span><span class="stat-value" id="antiraidStatus">✅ 啟用</span></div>
                 <div class="stat-row"><span class="stat-label">⚠️ 防濫權監控</span><span class="stat-value" id="antiabuseStatus">✅ 動作: ban</span></div>
-                <div class="stat-row"><span class="stat-label">🤖 機器人白名單</span><span class="stat-value" id="botDefenseStatus">⚙️ 啟用 | 動作: kick</span></div>
-                <button class="btn btn-primary" id="quickConfigBtn" style="width:100%; margin-top:12px;"><i class="fas fa-sliders-h"></i> 模擬快速配置 (演示)</button>
+                <div class="stat-row"><span class="stat-label">🤖 機器人白名單</span><span class="stat-value" id="botDefenseStatus">⚙️ 啟用</span></div>
+                <button class="btn btn-primary" id="quickConfigBtn" style="width:100%; margin-top:12px;"><i class="fas fa-sliders-h"></i> 快速配置</button>
             </div>
         </div>
     </div>
 
-    <!-- 第二層: 進階模組 + 即時日誌 -->
     <div class="dashboard-grid">
         <div class="card">
-            <div class="card-header"><i class="fas fa-bell"></i> 即時防禦日誌 (類Discord webhook)</div>
+            <div class="card-header"><i class="fas fa-bell"></i> 即時防禦日誌</div>
             <div class="card-body">
                 <div class="log-area" id="defenseLogArea">
-                    <div class="log-line">[系統] 🐧 企鵝機器人 v31.0 已上線，監控所有伺服器安全</div>
+                    <div class="log-line">[系統] 🐧 企鵝機器人 v31.0 已上線</div>
                     <div class="log-line">[系統] 強化429限流防禦 | 邀請追蹤模組就緒</div>
-                    <div class="log-line">[系統] WebHook防禦/外部應用刷頻偵測運作中</div>
                 </div>
                 <div class="btn-group" style="margin-top:12px;">
                     <button class="btn btn-outline" id="clearLogBtn"><i class="fas fa-trash-alt"></i> 清空日誌</button>
-                    <button class="btn btn-outline" id="simulateJoinBtn"><i class="fas fa-user-plus"></i> 模擬成員加入(邀請追蹤)</button>
+                    <button class="btn btn-outline" id="simulateJoinBtn"><i class="fas fa-user-plus"></i> 模擬成員加入</button>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-header"><i class="fas fa-chart-simple"></i> 炸群/WebHook防禦儀表</div>
+            <div class="card-header"><i class="fas fa-chart-simple"></i> 炸群/WebHook防禦</div>
             <div class="card-body">
-                <div class="stat-row"><span class="stat-label">🚨 防炸群模式</span><span class="stat-value" id="raidModeStatus">🔒 正常 | 閾值: 5msg/2s</span></div>
-                <div class="stat-row"><span class="stat-label">🪝 WebHook防禦</span><span class="stat-value" id="webhookDefense">✅ 啟用 | 動作: delete_and_ban</span></div>
-                <div class="stat-row"><span class="stat-label">🔄 外部APP刷頻</span><span class="stat-value" id="externalAppStatus">✅ 閾值10條/5s → kick</span></div>
-                <div class="stat-row"><span class="stat-label">🔗 邀請追蹤MODLOG</span><span class="stat-value">完整記錄邀請者/連結</span></div>
-                <button class="btn btn-primary" id="simulateRaidBtn"><i class="fas fa-bug"></i> 模擬炸群攻擊(觸發鎖定)</button>
+                <div class="stat-row"><span class="stat-label">🚨 防炸群模式</span><span class="stat-value" id="raidModeStatus">🔒 正常</span></div>
+                <div class="stat-row"><span class="stat-label">🪝 WebHook防禦</span><span class="stat-value" id="webhookDefense">✅ 啟用</span></div>
+                <div class="stat-row"><span class="stat-label">🔄 外部APP刷頻</span><span class="stat-value" id="externalAppStatus">✅ 啟用</span></div>
+                <button class="btn btn-primary" id="simulateRaidBtn"><i class="fas fa-bug"></i> 模擬炸群攻擊</button>
             </div>
         </div>
     </div>
 
-    <!-- 全伺服器指令與製作者面板 簡化快捷區 -->
     <div class="card" style="margin-top: 0.5rem;">
-        <div class="card-header"><i class="fas fa-terminal"></i> 管理控制檯 (指令模擬器)</div>
+        <div class="card-header"><i class="fas fa-terminal"></i> 管理控制檯</div>
         <div class="card-body">
-            <div class="btn-group" style="flex-wrap: wrap; justify-content: space-between;">
-                <button class="btn btn-outline" id="cmdBlacklist"><i class="fas fa-list-ul"></i> 查詢黑名單列表</button>
-                <button class="btn btn-outline" id="cmdProPanel"><i class="fas fa-gem"></i> 付費者面板(Pro)</button>
-                <button class="btn btn-outline" id="cmdOwnerPanel"><i class="fas fa-crown"></i> 製作者面板(擁有者)</button>
+            <div class="btn-group" style="flex-wrap: wrap; gap: 10px;">
+                <button class="btn btn-outline" id="cmdBlacklist"><i class="fas fa-list-ul"></i> 黑名單列表</button>
+                <button class="btn btn-outline" id="cmdProPanel"><i class="fas fa-gem"></i> Pro面板</button>
+                <button class="btn btn-outline" id="cmdOwnerPanel"><i class="fas fa-crown"></i> 製作者面板</button>
                 <button class="btn btn-outline" id="cmdServerInfo"><i class="fas fa-info-circle"></i> 伺服器查詢</button>
-                <button class="btn btn-primary" id="cmdSuggestion"><i class="fas fa-lightbulb"></i> 提交建議(模態)</button>
             </div>
-            <hr>
-            <div class="stat-row"><span class="stat-label">💡 提示: 本面板模擬機器人後台數據，所有操作僅前端展示，基於GitHub/Cloudflare可靜態運行。已修復所有潛在XSS與建構失敗原因，完整相容Cloudflare Pages。</span><span class="stat-value"></span></div>
         </div>
     </div>
+    
     <div class="footer">
-        <i class="fab fa-github"></i> 企鵝黑名單機器人 · 終極強化版 v31.0 | 支援429限流防禦 | 歡迎頻道自動建立 | 修復所有通知問題 | 部署於Cloudflare Pages / GitHub Pages 保證成功
+        <i class="fab fa-github"></i> 企鵝黑名單機器人 v31.0 | 部署於 Cloudflare Pages
     </div>
 </div>
 
 <script>
-    // ----- 模擬數據狀態 (與原始機器人配置風格一致) 增加防呆與完整修復-----
     let mockStats = {
-        guilds: 47,
-        members: 12480,
-        latencyMs: 82,
-        globalBan: 138,
-        godban: 9,
-        localBan: 26,
-        antinuke: true,
-        antiraid: true,
-        antiabuseAction: "ban",
-        botDefense: true,
-        botDefenseAction: "kick",
-        raidModeActive: false,
-        webhookAction: "delete_and_ban",
-        externalAppEnabled: true,
-        externalSpamThreshold: 10,
-        abuseBlockedCount: 24,
+        guilds: 47, members: 12480, latencyMs: 82,
+        globalBan: 138, godban: 9, localBan: 26,
+        antinuke: true, antiraid: true, antiabuseAction: "ban",
+        botDefense: true, raidModeActive: false,
+        webhookAction: "delete_and_ban", externalAppEnabled: true,
+        abuseBlockedCount: 24
     };
 
-    // 擴充日誌陣列 (修復初始化)
     let defenseLogs = [
-        "[系統] 🐧 企鵝機器人 v31.0 已上線，監控所有伺服器安全",
-        "[系統] 強化429限流防禦 | 邀請追蹤模組就緒",
-        "[系統] WebHook防禦/外部應用刷頻偵測運作中"
+        "[系統] 🐧 企鵝機器人 v31.0 已上線",
+        "[系統] 強化429限流防禦 | 邀請追蹤模組就緒"
     ];
 
-    // DOM 元素更新函數 (安全更新)
     function updateDashboard() {
-        const setText = (id, val) => { const el = document.getElementById(id); if(el) el.innerText = val; };
-        setText('guildCount', mockStats.guilds);
-        setText('memberCount', mockStats.members.toLocaleString());
-        setText('latency', mockStats.latencyMs + " ms");
-        setText('globalBanCount', mockStats.globalBan);
-        setText('godbanCount', mockStats.godban);
-        setText('localBanCount', mockStats.localBan);
-        setText('abuseBlocked', mockStats.abuseBlockedCount + " 次/本月");
-
-        // 動態html更新
-        const antinukeEl = document.getElementById('antinukeStatus');
-        if(antinukeEl) antinukeEl.innerHTML = mockStats.antinuke ? '<span class="status-badge status-on">✅ 已啟用</span>' : '<span class="status-badge status-off">❌ 停用</span>';
-        const antiraidEl = document.getElementById('antiraidStatus');
-        if(antiraidEl) antiraidEl.innerHTML = mockStats.antiraid ? '✅ 啟用 (3天/30分)' : '❌ 關閉';
-        const antiabuseEl = document.getElementById('antiabuseStatus');
-        if(antiabuseEl) antiabuseEl.innerHTML = `⚠️ 動作: ${mockStats.antiabuseAction.toUpperCase()}`;
-        const botDefenseEl = document.getElementById('botDefenseStatus');
-        if(botDefenseEl) botDefenseEl.innerHTML = mockStats.botDefense ? `⚙️ 啟用 | 動作: ${mockStats.botDefenseAction}` : '❌ 停用';
-        const raidModeEl = document.getElementById('raidModeStatus');
-        if(raidModeEl) raidModeEl.innerHTML = mockStats.raidModeActive ? '🚨 緊急鎖定模式 (60分)' : '🔒 正常 | 閾值: 5msg/2s';
-        const webhookEl = document.getElementById('webhookDefense');
-        if(webhookEl) webhookEl.innerHTML = `✅ 啟用 | 動作: ${mockStats.webhookAction.replace(/_/g,' ')}`;
-        const externalEl = document.getElementById('externalAppStatus');
-        if(externalEl) externalEl.innerHTML = mockStats.externalAppEnabled ? `✅ 閾值${mockStats.externalSpamThreshold}條/5s → kick` : '❌ 關閉';
+        document.getElementById('guildCount').innerText = mockStats.guilds;
+        document.getElementById('memberCount').innerText = mockStats.members.toLocaleString();
+        document.getElementById('latency').innerText = mockStats.latencyMs + " ms";
+        document.getElementById('globalBanCount').innerText = mockStats.globalBan;
+        document.getElementById('godbanCount').innerText = mockStats.godban;
+        document.getElementById('localBanCount').innerText = mockStats.localBan;
+        document.getElementById('abuseBlocked').innerText = mockStats.abuseBlockedCount + " 次/本月";
+        document.getElementById('antinukeStatus').innerHTML = mockStats.antinuke ? '✅ 已啟用' : '❌ 停用';
+        document.getElementById('antiraidStatus').innerHTML = mockStats.antiraid ? '✅ 啟用' : '❌ 關閉';
+        document.getElementById('antiabuseStatus').innerHTML = `✅ 動作: ${mockStats.antiabuseAction}`;
+        document.getElementById('botDefenseStatus').innerHTML = mockStats.botDefense ? '⚙️ 啟用' : '❌ 停用';
+        document.getElementById('raidModeStatus').innerHTML = mockStats.raidModeActive ? '🚨 緊急鎖定模式' : '🔒 正常';
+        document.getElementById('webhookDefense').innerHTML = `✅ 啟用 | ${mockStats.webhookAction}`;
+        document.getElementById('externalAppStatus').innerHTML = mockStats.externalAppEnabled ? '✅ 啟用' : '❌ 關閉';
     }
 
-    // 添加日誌 (防止XSS)
-    function addLog(message, type = "info") {
+    function addLog(message) {
         const time = new Date().toLocaleTimeString('zh-TW');
-        let prefix = "📋";
-        if(type === "alert") prefix = "⚠️";
-        else if(type === "success") prefix = "✅";
-        const safeMsg = String(message).replace(/[&<>]/g, function(m) {
+        defenseLogs.unshift(`[${time}] ${message}`);
+        if(defenseLogs.length > 20) defenseLogs.pop();
+        document.getElementById('defenseLogArea').innerHTML = defenseLogs.map(l => `<div class="log-line">${escapeHtml(l)}</div>`).join('');
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
             if(m === '&') return '&amp;';
             if(m === '<') return '&lt;';
             if(m === '>') return '&gt;';
             return m;
         });
-        defenseLogs.unshift(`[${time}] ${prefix} ${safeMsg}`);
-        if(defenseLogs.length > 22) defenseLogs.pop();
-        renderLogArea();
     }
 
-    function renderLogArea() {
-        const logDiv = document.getElementById('defenseLogArea');
-        if(logDiv) {
-            logDiv.innerHTML = defenseLogs.map(l => `<div class="log-line">${l}</div>`).join('');
-            // 自動滾動到頂部（新日誌在上方）
-            logDiv.scrollTop = 0;
-        }
-    }
+    document.getElementById('refreshStatsBtn').addEventListener('click', () => {
+        mockStats.latencyMs = Math.floor(Math.random() * 50 + 45);
+        mockStats.guilds += Math.floor(Math.random() * 3);
+        mockStats.members += Math.floor(Math.random() * 20);
+        updateDashboard();
+        addLog(`狀態刷新: 延遲 ${mockStats.latencyMs}ms, 守護 ${mockStats.guilds} 個伺服器`);
+    });
 
-    // 模擬成員加入
-    function simulateMemberJoin() {
-        addLog(`邀請追蹤系統 | 新成員「企鵝守護者」加入，使用邀請碼 "penguin2026" 邀請者: 伺服器管理員 (已記錄至MODLOG)`, "success");
+    document.getElementById('inviteLinkBtn').addEventListener('click', () => {
+        window.open("https://discord.com/oauth2/authorize?client_id=1453542995524583424&permissions=8&scope=bot", "_blank");
+        addLog("已開啟機器人邀請連結");
+    });
+
+    document.getElementById('simulateJoinBtn').addEventListener('click', () => {
+        addLog(`新成員加入，邀請者: 管理員 (已記錄至MODLOG)`);
         mockStats.members += 1;
         updateDashboard();
-        addLog(`[MODLOG] 成員加入事件已完整記錄，帳號年齡: 2個月，邀請頻道: #歡迎大廳`, "info");
-    }
+    });
 
-    // 模擬炸群攻擊 + 自動解除鎖定(8秒後)
-    let raidTimeout = null;
-    function simulateRaidAttack() {
-        addLog(`🚨 偵測到大規模炸群攻擊！ 短時間內5條訊息/2秒 + 大量 @everyone`, "alert");
-        addLog(`[防炸群] 觸發緊急防禦，已封鎖攻擊者 (ID: 675****)，並啟動鎖定模式60秒`, "alert");
-        if(!mockStats.raidModeActive) {
-            mockStats.raidModeActive = true;
+    document.getElementById('simulateRaidBtn').addEventListener('click', () => {
+        addLog(`🚨 偵測到炸群攻擊！已封鎖攻擊者並啟動鎖定模式`);
+        mockStats.raidModeActive = true;
+        updateDashboard();
+        setTimeout(() => {
+            mockStats.raidModeActive = false;
             updateDashboard();
-            addLog(`[系統] 已自動刪除伺服器所有邀請連結，啟動緊急模式，通知伺服器擁有者`, "alert");
-        }
-        if(raidTimeout) clearTimeout(raidTimeout);
-        raidTimeout = setTimeout(() => {
-            if(mockStats.raidModeActive) {
-                mockStats.raidModeActive = false;
-                updateDashboard();
-                addLog(`[防炸群] 鎖定模式已自動解除，伺服器恢復正常`, "success");
-            }
+            addLog(`鎖定模式已解除，伺服器恢復正常`);
         }, 8000);
-    }
+    });
 
-    // 黑名單列表展示
-    function showBlacklistModal() {
-        alert(`📋 黑名單列表\n🌐 全域黑名單: ${mockStats.globalBan} 筆\n👑 GodBan: ${mockStats.godban} 筆\n🏠 本服黑名單: ${mockStats.localBan} 筆\n\n範例惡意ID:\n全域: 10023456789, 10987654321\nGodBan: 111222333 (極端破壞者)\n本地: 445566778 (違規使用者)`);
-        addLog("管理員查閱了黑名單列表", "info");
-    }
+    document.getElementById('clearLogBtn').addEventListener('click', () => {
+        defenseLogs = ["[系統] 日誌已清空"];
+        document.getElementById('defenseLogArea').innerHTML = '<div class="log-line">[系統] 日誌已清空</div>';
+        addLog("管理員清空了防禦日誌");
+    });
 
-    function proPanelMock() {
-        alert("⚡ 付費者面板(Pro用戶專用)\n- 機器人防禦/白名單設定\n- WebHook防禦細部調整\n- 防刷頻自訂參數(閾值/時間窗)\n- 惡意連結過濾豁免清單\n\n✨ 此為靜態展示，完整功能請部署機器人後使用指令。");
-        addLog("付費者面板已開啟 (Pro權限驗證通過)", "success");
-    }
-
-    function ownerPanelMock() {
-        alert("👑 製作者面板 (Bot擁有者)\n• 全域黑名單 / GodBan 管理\n• 伺服器列表 / 離開伺服器\n• 公告全伺服器廣播\n• 狀態循環小灰框設定\n• 備份/修復結構\n\n模擬環境下僅展示介面。");
-        addLog("擁有者面板: 檢視系統統計 & 執行全域操作", "info");
-    }
-
-    function serverInfoMock() {
-        alert(`📊 當前伺服器資訊 (示範)\n伺服器名稱: 企鵝守護殿堂\nID: 745218934567891234\n擁有者: 管理員大大\n建立時間: 2022-05-12\n成員數: ${mockStats.members}\n文字頻道: 12 | 語音頻道: 5\n機器人延遲: ${mockStats.latencyMs}ms\n邀請連結: 模擬連結 (實際請用 /伺服器查詢)`);
-        addLog("已執行伺服器查詢指令", "info");
-    }
-
-    function suggestionModal() {
-        let title = prompt("💡 建議標題", "強化通知功能");
-        if(title === null) return;
-        title = title.trim();
-        if(title === "") return;
-        let content = prompt("建議內容", "希望增加更多歡迎訊息模板");
-        if(content === null) return;
-        content = content.trim();
-        if(content) {
-            alert(`✅ 建議已提交！編號 #${Math.floor(Math.random()*900)+100}\n機器人擁有者將會審閱。`);
-            addLog(`新建議提交: 「${title.substring(0,50)}」 - 內容摘要: ${content.substring(0,60)}`, "success");
-        }
-    }
-
-    function quickConfigDemo() {
-        let newAction = prompt("模擬快速配置防禦動作 (輸入 ban/kick/mute 變更防濫權動作)", mockStats.antiabuseAction);
-        if(newAction && ['ban','kick','mute'].includes(newAction.toLowerCase())) {
-            mockStats.antiabuseAction = newAction.toLowerCase();
+    document.getElementById('quickConfigBtn').addEventListener('click', () => {
+        let newAction = prompt("設定防濫權動作 (ban/kick/mute)", mockStats.antiabuseAction);
+        if(newAction && ['ban','kick','mute'].includes(newAction)) {
+            mockStats.antiabuseAction = newAction;
             updateDashboard();
-            addLog(`防濫權系統動作已變更為 ${mockStats.antiabuseAction.toUpperCase()}`, "success");
-        } else if(newAction && newAction !== null) alert("無效動作，請輸入 ban / kick / mute");
-        
-        let botToggle = confirm("是否切換機器人防禦白名單開關？ (確定=切換狀態)");
-        if(botToggle) {
-            mockStats.botDefense = !mockStats.botDefense;
-            updateDashboard();
-            addLog(`機器人防禦/白名單系統已${mockStats.botDefense ? "啟用" : "停用"}`, "info");
+            addLog(`防濫權動作已變更為 ${newAction}`);
         }
-        // 額外模擬webhook切換小彩蛋
-        let changeWebhook = confirm("是否要切換 WebHook 防禦模式? (確定=切換 delete_and_ban / 取消=保持原樣)");
-        if(changeWebhook) {
-            mockStats.webhookAction = mockStats.webhookAction === "delete_and_ban" ? "delete_only" : "delete_and_ban";
-            updateDashboard();
-            addLog(`WebHook防禦策略已更改為: ${mockStats.webhookAction.replace(/_/g,' ')}`, "success");
+    });
+
+    document.getElementById('cmdBlacklist').addEventListener('click', () => {
+        alert(`黑名單統計\n全域: ${mockStats.globalBan} 筆\nGodBan: ${mockStats.godban} 筆\n本服: ${mockStats.localBan} 筆`);
+    });
+
+    document.getElementById('cmdProPanel').addEventListener('click', () => {
+        alert("Pro 面板功能展示\n- 自訂防禦閾值\n- WebHook 管理\n- 白名單設定");
+    });
+
+    document.getElementById('cmdOwnerPanel').addEventListener('click', () => {
+        alert("製作者面板\n- 全域黑名單管理\n- 伺服器列表\n- 系統廣播");
+    });
+
+    document.getElementById('cmdServerInfo').addEventListener('click', () => {
+        alert(`伺服器資訊\n成員數: ${mockStats.members}\n延遲: ${mockStats.latencyMs}ms`);
+    });
+
+    updateDashboard();
+    
+    setInterval(() => {
+        if(Math.random() > 0.7) {
+            addLog("[系統] 429限流防禦運作中，隊列正常");
         }
-    }
-
-    function refreshStats() {
-        mockStats.latencyMs = Math.floor(Math.random() * 50 + 45);
-        mockStats.guilds = 47 + Math.floor(Math.random() * 4);
-        mockStats.members += Math.floor(Math.random() * 25);
-        if(Math.random() > 0.65) mockStats.globalBan += 1;
-        if(Math.random() > 0.85) mockStats.abuseBlockedCount += 1;
-        updateDashboard();
-        addLog(`狀態刷新: 機器人延遲 ${mockStats.latencyMs}ms, 守護 ${mockStats.guilds} 個伺服器 | 黑名單即時同步`, "success");
-    }
-
-    function inviteBotLink() {
-        // 有效discord授權連結範例 (實際可換)
-        window.open("https://discord.com/oauth2/authorize?client_id=1453542995524583424&permissions=8&integration_type=0&scope=bot", "_blank");
-        addLog("已開啟機器人邀請連結 (管理員權限)", "info");
-    }
-
-    function clearLogs() {
-        defenseLogs = ["[系統] 日誌已由管理員清空，防禦系統持續運作中"];
-        renderLogArea();
-        addLog("管理員清空了防禦日誌面板", "info");
-    }
-
-    // 背景模擬隨機事件 (避免過多，展示429防禦)
-    let intervalId = null;
-    function startBackgroundEvents() {
-        if(intervalId) clearInterval(intervalId);
-        intervalId = setInterval(() => {
-            if(Math.random() > 0.72) {
-                const events = [
-                    "[MODLOG] 語音狀態更新: 用戶移動至遊戲區 (安全記錄)",
-                    "[防429] 成功發送webhook日誌，限流隊列正常 | 指數退避演算待命中",
-                    "[邀請追蹤] 邀請連結已被使用 +1 | 追蹤碼: penguinX99",
-                    "[防機器人頭像變更] 偵測到可疑機器人頭像變化，已執行 ban 並加入黑名單"
-                ];
-                const randEv = events[Math.floor(Math.random() * events.length)];
-                addLog(randEv, "info");
-            }
-            // 模擬自動更新線上成員小波動 (保持動態)
-            if(Math.random() > 0.85) {
-                mockStats.members = Math.max(12400, mockStats.members + (Math.random() > 0.5 ? 1 : -1));
-                updateDashboard();
-            }
-        }, 18000);
-    }
-
-    // 綁定所有事件 (確保所有按鈕皆存在)
-    function bindEvents() {
-        const refreshBtn = document.getElementById('refreshStatsBtn');
-        if(refreshBtn) refreshBtn.addEventListener('click', refreshStats);
-        const inviteBtn = document.getElementById('inviteLinkBtn');
-        if(inviteBtn) inviteBtn.addEventListener('click', inviteBotLink);
-        const quickBtn = document.getElementById('quickConfigBtn');
-        if(quickBtn) quickBtn.addEventListener('click', quickConfigDemo);
-        const joinBtn = document.getElementById('simulateJoinBtn');
-        if(joinBtn) joinBtn.addEventListener('click', simulateMemberJoin);
-        const raidBtn = document.getElementById('simulateRaidBtn');
-        if(raidBtn) raidBtn.addEventListener('click', simulateRaidAttack);
-        const clearBtn = document.getElementById('clearLogBtn');
-        if(clearBtn) clearBtn.addEventListener('click', clearLogs);
-        const blacklistBtn = document.getElementById('cmdBlacklist');
-        if(blacklistBtn) blacklistBtn.addEventListener('click', showBlacklistModal);
-        const proBtn = document.getElementById('cmdProPanel');
-        if(proBtn) proBtn.addEventListener('click', proPanelMock);
-        const ownerBtn = document.getElementById('cmdOwnerPanel');
-        if(ownerBtn) ownerBtn.addEventListener('click', ownerPanelMock);
-        const serverBtn = document.getElementById('cmdServerInfo');
-        if(serverBtn) serverBtn.addEventListener('click', serverInfoMock);
-        const suggestBtn = document.getElementById('cmdSuggestion');
-        if(suggestBtn) suggestBtn.addEventListener('click', suggestionModal);
-    }
-
-    // 初始化所有
-    function init() {
-        bindEvents();
-        updateDashboard();
-        renderLogArea();
-        startBackgroundEvents();
-    }
-    init();
+    }, 15000);
 </script>
 </body>
 </html>
